@@ -1,11 +1,5 @@
-import Personagem from "./Personagem";
-import Classe from "./Classe";
-import Turno from "/Turno";
-import LocalDeBatalha from "/LocalDeBatalha";
-import Cidade from "/Cidade";
-import Jogador from "/Jogador";
-
-export default class Batalha {
+import {Turno} from "./Turno.js"
+export class Batalha {
   constructor(id, status, Personagem, Npc) {
     this.id = id;
     this.status = status;
@@ -47,7 +41,7 @@ export default class Batalha {
 
     console.log("Status atual do turno", turno.status);
     if (turno.status != "Fim") {
-      this.finalizaBatalha();
+      this.finalizaBatalha(turno);
     }
 
     if (turno.status == "Fim") {
@@ -61,7 +55,7 @@ export default class Batalha {
       novoTurno.batalhar(novoAtacante, novoDefensor);
       this.adicionaTurno(novoTurno);
       while (novoTurno.status == "Fim") {
-        novoTurno = novoTurno(this.idTurno++);
+        novoTurno = this.novoTurno(this.idTurno++);
         var novoAtacante =
           this.ultimoAtacante == this.Personagem ? this.Npc : this.Personagem;
         var novoDefensor =
@@ -76,6 +70,7 @@ export default class Batalha {
   finalizaBatalha(turno) {
     console.log("batalha finalizada");
     this.status = "Finalizado";
+    console.log("...", turno)
     turno.status = "Finalizado";
   }
 

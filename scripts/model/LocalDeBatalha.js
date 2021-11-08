@@ -1,4 +1,4 @@
-export default class LocalDeBatalha {
+export class LocalDeBatalha {
     constructor(id, Cidade, Personagem, Batalha){
         this.id = id;
         this.Cidade = Cidade;

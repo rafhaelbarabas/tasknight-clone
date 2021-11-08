@@ -1,14 +1,5 @@
 const MULTIPLICADOR = 25;
-
-import Batalha from "./Batalha";
-import Classe from "./Classe";
-import Turno from "/Turno";
-import LocalDeBatalha from "/LocalDeBatalha";
-import Cidade from "/Cidade";
-import Jogador from "/Jogador";
-
-
-exports.module = class Personagem {
+export class Personagem {
   constructor(id, Jogador, Classe, nivel, xp, nome, hp){
     this.id = id;
     this.Jogador = Jogador;
@@ -21,9 +12,9 @@ exports.module = class Personagem {
   }
 
   diminuirVida(fator){
-    this.hp = fator * MULTIPLICADOR - this.hp;
+    this.hp = this.hp - (fator * MULTIPLICADOR);
     if(this.hp <= 0){ 
-      matarPersonagem();
+      this.matarPersonagem();
     }
   }
 

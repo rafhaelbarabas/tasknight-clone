@@ -1,4 +1,4 @@
-export default class Cidade {
+export class Cidade {
     constructor(id, nome, nivelMinimo, nivelMaximo){
         this.id = id;
         this.nome = nome;

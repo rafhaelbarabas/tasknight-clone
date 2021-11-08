@@ -1,20 +1,5 @@
 const MULTIPLICADOR_2 = 25;
-
-import Batalha from "./Batalha";
-import Classe from "./Classe";
-import Personagem from "./Personagem";
-import LocalDeBatalha from "/LocalDeBatalha";
-import Cidade from "/Cidade";
-import Jogador from "/Jogador";
-
-import Batalha from "./Batalha";
-import Classe from "./Classe";
-import Personagem from "./Personagem";
-import LocalDeBatalha from "/LocalDeBatalha";
-import Cidade from "/Cidade";
-import Jogador from "/Jogador";
-
-export default class Turno {
+export class Turno {
   constructor(id, Batalha, status) {
     this.id = id;
     this.Batalha = Batalha;
